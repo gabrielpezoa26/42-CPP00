@@ -1,0 +1,22 @@
+
+SRC = phonebook.cpp
+OBJECTS = phonebook.o
+
+CC = g++
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+
+all: phonebook
+
+phonebook: $(OBJECTS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJECTS)
+
+fclean: clean
+	rm -f phonebook
+
+re: fclean all
