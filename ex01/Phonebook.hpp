@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/01 13:26:06 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/01 19:00:27 by gcesar-n         ###   ########.fr       */
+/*   Created: 2025/10/01 20:00:11 by gcesar-n          #+#    #+#             */
+/*   Updated: 2025/10/01 20:00:14 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
@@ -34,9 +35,9 @@ class Phonebook
 	Contact contact_list[8];
 	
 	public:
-	bool addContact();
-	bool searchContact();
-	bool quitPhonebook();
+	void addContact();
+	void searchContact();
+	void quitPhonebook();
 
 };
 
