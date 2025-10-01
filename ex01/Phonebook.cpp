@@ -1,37 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:26:09 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/01 15:00:15 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/01 18:54:35 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
-static bool add_contact();
-static bool search_contact();
-static bool quit_phonebook();
+bool Phonebook::addContact()
+{
+	std::cout << "DEBUG: 1";
+	return true;
+}
+
+bool Phonebook::searchContact()
+{
+	std::cout << "DEBUG: 2";
+	return true;
+
+}
+
+bool Phonebook::quitPhonebook()
+{
+	std::cout << "DEBUG: 3";
+	return true;
+
+}
 
 int main(int argc, char **argv)
 {
+	Phonebook mangoloko;
 	std::string command;
 
-	command = argv[1];
-	if(!command)
-		return 1;  //printar erro
-
+	if (argc != 1)
+	{
+		std::cout << "DEBUG: Error!";
+		return (1);
+	}
+	command = argv[0];
 	while (1)
 	{
 		if (command == "ADD")
-			add_contact();
+			mangoloko.addContact();
 		if (command == "SEARCH")
-			search_contact();
+			mangoloko.searchContact();
 		if (command == "EXIT")
-			quit_phonebook();
+			mangoloko.quitPhonebook();
 	}
 	return (0);
 }
