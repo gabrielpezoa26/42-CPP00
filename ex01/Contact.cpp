@@ -6,35 +6,35 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 09:49:40 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/02 10:17:59 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/02 15:00:53 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-void setFirstName()
+void Contact::setFirstName(std::string newFirstName)
 {
-	
+	FirstName = newFirstName;
 }
 
-void setLastName()
+void Contact::setLastName(std::string newLastName)
 {
-	
+	LastName = newLastName;
 }
 
-void setNickName()
+void Contact::setNickName(std::string newNickName)
 {
-	
+	NickName = newNickName;
 }
 
-void setPhoneNumber()
+void Contact::setPhoneNumber(std::string newPhoneNumber)
 {
-	
+	PhoneNumber = newPhoneNumber;
 }
 
-void setDarkestSecret()
+void Contact::setDarkestSecret(std::string newDarkestSecret)
 {
-	
+	DarkestSecret = newDarkestSecret;
 }
 
 std::string Contact::getFirstName()
@@ -49,7 +49,7 @@ std::string Contact::getLastName()
 
 std::string Contact::getNickName()
 {
-	return Nickname;
+	return NickName;
 }
 
 std::string Contact::getPhoneNumber()

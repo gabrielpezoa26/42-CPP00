@@ -19,4 +19,7 @@ clean:
 fclean: clean
 	rm -f phonebook
 
+run: all
+	./phonebook
+
 re: fclean all

@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 09:50:04 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/02 10:12:37 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/02 15:00:38 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ class Contact
 	private:
 	std::string FirstName;
 	std::string LastName;
-	std::string Nickname;
+	std::string NickName;
 	std::string PhoneNumber;
 	std::string DarkestSecret;
 	
 
 	public:
-	void setFirstName();
-	void setLastName();
-	void setNickName();
-	void setPhoneNumber();
-	void setDarkestSecret();
+	void setFirstName(std::string newFirstName);
+	void setLastName(std::string newLastName);
+	void setNickName(std::string newNickName);
+	void setPhoneNumber(std::string newPhoneNumber);
+	void setDarkestSecret(std::string newDarkestSecret);
 
 	std::string getFirstName();
 	std::string getLastName();
