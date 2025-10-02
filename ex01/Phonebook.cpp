@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:26:09 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/02 16:20:02 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/02 16:23:45 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void Phonebook::addContact()
 	std::string user_input;
 
 	i = 0;
-	while (i <1)
+	while (1)
 	{
 		std::cout << "Please enter the first name: ";
 		getline(std::cin, user_input);
