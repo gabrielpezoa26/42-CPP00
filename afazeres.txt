@@ -1,0 +1,27 @@
+02/10/25
+
+-> ADD
+	-> fzr o loop pra ir preenchendo os campos (ate 8, dps substitui)
+	-> fzr a lógica quando (i == 8)
+	-> tratativas de erro
+		-> campo vazio
+		-> letra no telefone
+	-> refatorar
+
+-> SEARCH
+	-> fzr a lógica que solicita o prompt
+	-> lógica que printa a tabela, truncar etc
+	-> solicita o prompt dnv
+	-> tratativas de erro
+
+
+-> EXIT
+	-> refatorar
+
+
+
+
+dps:
+	-> makefile:: criar pasta objects
+	-> makefile:: criar uma var NAME
+	-> Norma
