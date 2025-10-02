@@ -1,6 +1,6 @@
 
-SRC = Phonebook.cpp
-OBJECTS = Phonebook.o
+SRC = Phonebook.cpp Contact.cpp main.cpp 
+OBJECTS = Phonebook.o Contact.o main.o
 
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
