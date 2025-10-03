@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 09:51:16 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/02 14:51:27 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/03 17:37:19 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static bool	check_args(int argc, char **argv)
 {
 	if (argc != 1 || argv[1])
 	{
-		std::cout << "Incorrect argument count.\n";
+		std::cout << "Incorrect argument count." << std::endl;
 		return (false);
 	}
 	return (true);
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 
 	if (!check_args(argc, argv))
 		return 1;
-	std::cout << "Welcome to the Phonebook program!" << "\n";
+	std::cout << "Welcome to the Phonebook program!" << std::endl;
 	while (1)
 	{
 		std::cout << "Please enter a command( ADD || SEARCH || EXIT )>> ";
@@ -42,6 +42,10 @@ int	main(int argc, char **argv)
 			mangoloko.searchContact();
 		else if (command == "EXIT")
 			mangoloko.quitPhonebook();
+		else
+		{
+			std::cout << "Please try a valid command ;)" << std::endl; 
+		}
 	}
 	return (0);
 }

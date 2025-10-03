@@ -3,8 +3,6 @@
 -> ADD
 	-> fzr a lógica quando (i == 8)
 		-> adicionar ctt no contact_list
-			-> usar lista? cpa 
-
 	-> tratativas de erro
 		-> campo vazio
 		-> letra no telefone

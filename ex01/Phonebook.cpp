@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:26:09 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/03 12:38:18 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/03 16:46:14 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,46 +19,39 @@
 
 void Phonebook::addContact()
 {
-	int	i;
-	Contact contact;
 	std::string user_input;
 
-	i = 8;
-	while (1)
+	std::cout << "Please enter the first name: ";
+	getline(std::cin, user_input);
+	contact_list[contact_index].setFirstName(user_input);
+	std::cout << "DEBUG: first name = " << user_input << std::endl;
+
+	std::cout << "Please enter the last name: ";
+	getline(std::cin, user_input);
+	contact_list[contact_index].setLastName(user_input);
+	std::cout << "DEBUG: last name = " << user_input << std::endl;
+
+	std::cout << "Please enter the nickname: ";
+	getline(std::cin, user_input);
+	contact_list[contact_index].setNickName(user_input);
+	std::cout << "DEBUG: nickname = " << user_input << std::endl;
+
+	std::cout << "Please enter the phonenumber: ";
+	getline(std::cin, user_input);
+	contact_list[contact_index].setPhoneNumber(user_input);
+	std::cout << "DEBUG: phonenumber = " << user_input << std::endl;
+	
+	std::cout << "Please enter the darkest secret: ";
+	getline(std::cin, user_input);
+	contact_list[contact_index].setDarkestSecret(user_input);
+	std::cout << "DEBUG: secret = " << user_input << std::endl;
+
+	std::cout << "Contact added successfully!" << std::endl;
+	contact_index++;
+	if (contact_index == 8)
 	{
-		if (i == 8)
-		{
-			std::cout << "DEBUG: entrou no if\n";
-		}
-		std::cout << "Please enter the first name: ";
-		getline(std::cin, user_input);
-		contact.setFirstName(user_input);
-		std::cout << "DEBUG: first name = " << user_input << std::endl;
-
-		std::cout << "Please enter the last name: ";
-		getline(std::cin, user_input);
-		contact.setLastName(user_input);
-		std::cout << "DEBUG: last name = " << user_input << std::endl;
-
-		std::cout << "Please enter the nickname: ";
-		getline(std::cin, user_input);
-		contact.setNickName(user_input);
-		std::cout << "DEBUG: nickname = " << user_input << std::endl;
-
-		std::cout << "Please enter the phonenumber: ";
-		getline(std::cin, user_input);
-		contact.setPhoneNumber(user_input);
-		std::cout << "DEBUG: phonenumber = " << user_input << std::endl;
-		
-		std::cout << "Please enter the darkest secret: ";
-		getline(std::cin, user_input);
-		contact.setDarkestSecret(user_input);
-		std::cout << "DEBUG: secret = " << user_input << std::endl;
-
-		std::cout << "Contact added successfully!" << std::endl;
-		i++;
-		printf("%d\n", i);
-		break ;
+		std::cout << "DEBUG: zerouuu\n";
+		contact_index = 0;
 	}
 }
 
