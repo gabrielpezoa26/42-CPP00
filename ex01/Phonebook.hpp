@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 20:00:11 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/02 10:06:51 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/03 12:38:01 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 #include "Contact.hpp"
 #include <iostream>
 #include <string>
+#include <unistd.h>
+#include <list>
+#include <cstdlib>
+#include <stdio.h> //apagar
 
 class Phonebook
 {
@@ -27,6 +31,8 @@ class Phonebook
 	void addContact();
 	void searchContact();
 	void quitPhonebook();
+	
+	// std::list getContactList();
 
 };
 

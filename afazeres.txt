@@ -1,12 +1,15 @@
 02/10/25
 
 -> ADD
-	-> fzr o loop pra ir preenchendo os campos (ate 8, dps substitui)
 	-> fzr a lógica quando (i == 8)
+		-> adicionar ctt no contact_list
+			-> usar lista? cpa 
+
 	-> tratativas de erro
 		-> campo vazio
 		-> letra no telefone
 	-> refatorar
+
 
 -> SEARCH
 	-> fzr a lógica que solicita o prompt
@@ -23,5 +26,11 @@
 
 dps:
 	-> makefile:: criar pasta objects
-	-> makefile:: criar uma var NAME
-	-> Norma
+	-> norma
+
+
+links:
+
+
+https://cplusplus.com/reference/list/list/
+https://cplusplus.com/doc/tutorial/arrays/
