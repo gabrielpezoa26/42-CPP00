@@ -6,16 +6,11 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:26:09 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/03 16:46:14 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/03 18:42:35 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
-
-// std::string Phonebook std::list getContactList()
-// {
-	
-// }
 
 void Phonebook::addContact()
 {
