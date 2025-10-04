@@ -1,12 +1,7 @@
-02/10/25
+04/10/25
 
--> ADD
-	-> tratativas de erro
-		-> campo vazio        ok
-		-> letra no telefone    ok
-	-> refatorar addContact() em métodos menores    ok
-	
-	->
+
+-> ADD             ok*
 
 
 -> SEARCH
@@ -17,30 +12,19 @@
 
 
 -> EXIT
-	-> refatorar
+	-> refatorar*
 
 
+
+geral:
 
 
 dps:
-	-> makefile:: criar pasta objects
 	-> norma
+
 
 
 links:
 
 
-https://cplusplus.com/reference/list/list/
 https://cplusplus.com/doc/tutorial/arrays/
-
-
-
-Syntax
-	string.empty();
-	Parameters
-	None.
-
-	Technical Details
-	Returns:	A boolean value:
-	0 - if the string is not empty
-	1 - if the string is empty
