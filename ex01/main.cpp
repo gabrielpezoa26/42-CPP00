@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 09:51:16 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/03 18:34:27 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/04 17:22:41 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static bool	check_args(int argc, char **argv)
 {
 	if (argc != 1 || argv[1])
 	{
-		std::cout << "Incorrect argument count." << std::endl;
+		std::cout << "Incorrect argument count :(( " << std::endl;
 		return (false);
 	}
 	return (true);

@@ -2,9 +2,11 @@
 
 -> ADD
 	-> tratativas de erro
-		-> campo vazio
-		-> letra no telefone
-	-> refatorar addContact() em métodos menores
+		-> campo vazio        ok
+		-> letra no telefone    ok
+	-> refatorar addContact() em métodos menores    ok
+	
+	->
 
 
 -> SEARCH

@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:26:09 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/04 14:18:10 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/04 17:16:43 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void Phonebook::promptFirstName(std::string user_input)
 		getline(std::cin, user_input);
 		if (!user_input.empty())
 		{
-			std::cout << "DEBUG: boaa\n";
 			break ;
 		}
 	}
@@ -34,9 +33,8 @@ void Phonebook::promptLastName(std::string user_input)
 	{	
 		std::cout << "Please enter the last name: ";
 		getline(std::cin, user_input);
-		if (user_input.empty())
+		if (!user_input.empty())
 		{
-			std::cout << "DEBUG: boaa\n";
 			break ;
 		}
 	}
@@ -50,9 +48,8 @@ void Phonebook::promptNickName(std::string user_input)
 	{	
 		std::cout << "Please enter the nickname: ";
 		getline(std::cin, user_input);
-		if (user_input.empty())
+		if (!user_input.empty())
 		{
-			std::cout << "DEBUG: boaa\n";
 			break ;
 		}
 	}
@@ -66,14 +63,30 @@ void Phonebook::promptPhoneNumber(std::string user_input)
 	{	
 		std::cout << "Please enter the phonenumber: ";
 		getline(std::cin, user_input);
-		if (user_input.empty())
+		if (!user_input.empty())
 		{
-			std::cout << "DEBUG: vishhhh\n";
-			exit(EXIT_FAILURE);
+			if (isValidNumber(user_input))
+				break ;
 		}
 	}
 		contact_list[contact_index].setPhoneNumber(user_input);
 		std::cout << "DEBUG: phonenumber = " << user_input << std::endl;
+}
+
+bool Phonebook::isValidNumber(std::string user_input)
+{
+	unsigned long int i = 0;
+
+	while(i < user_input.length())
+	{
+		if(!std::isdigit(user_input[i]))
+		{
+			std::cout << "Please insert a valid number :((  " << std::endl;
+			return false;
+		}
+		i++;
+	}
+	return true;
 }
 
 void Phonebook::promptDarkestSecret(std::string user_input)
@@ -82,11 +95,10 @@ void Phonebook::promptDarkestSecret(std::string user_input)
 	{
 		std::cout << "Please enter the darkest secret: ";
 		getline(std::cin, user_input);
-		if (user_input.empty())
+		if (!user_input.empty())
 		{
-			std::cout << "DEBUG: vishhhh\n";
-			exit(EXIT_FAILURE);
-		}
+			break ;
+ 		}
 	}
 	contact_list[contact_index].setDarkestSecret(user_input);
 	std::cout << "DEBUG: secret = " << user_input << std::endl;
@@ -101,9 +113,9 @@ void Phonebook::addContact()
 	promptNickName(user_input);
 	promptPhoneNumber(user_input);
 	promptDarkestSecret(user_input);
-
 	std::cout << "Contact added successfully!" << std::endl;
 	contact_index++;
+
 	if (contact_index == 8)
 	{
 		std::cout << "DEBUG: zerouuu\n";
@@ -118,6 +130,8 @@ void Phonebook::searchContact()
 
 void Phonebook::quitPhonebook()
 {
+	std::cout << "Exiting Phonebook ...\n";
+	sleep(1);
 	std::cout << "Burning all contacts ...\n";
 	sleep(1);
 	std::cout << "...\n";
