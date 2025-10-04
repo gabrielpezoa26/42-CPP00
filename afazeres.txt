@@ -1,12 +1,10 @@
 02/10/25
 
 -> ADD
-	-> fzr a lógica quando (i == 8)
-		-> adicionar ctt no contact_list
 	-> tratativas de erro
 		-> campo vazio
 		-> letra no telefone
-	-> refatorar
+	-> refatorar addContact() em métodos menores
 
 
 -> SEARCH
@@ -32,3 +30,15 @@ links:
 
 https://cplusplus.com/reference/list/list/
 https://cplusplus.com/doc/tutorial/arrays/
+
+
+
+Syntax
+	string.empty();
+	Parameters
+	None.
+
+	Technical Details
+	Returns:	A boolean value:
+	0 - if the string is not empty
+	1 - if the string is empty
