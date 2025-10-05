@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 20:00:11 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/04 16:45:09 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/04 22:49:42 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,16 @@
 #include <stdlib.h>
 #include <cstdlib>
 
+#define COLUMN_WIDTH 10
+#define MAX_WIDTH 45
+
 class Phonebook
 {
 	private:
 	Contact contact_list[8];
 	int		contact_index;
+	void printMessage(std::string message);
+	void printHeader();
 	void promptFirstName(std::string user_input);
 	void promptLastName(std::string user_input);
 	void promptNickName(std::string user_input);

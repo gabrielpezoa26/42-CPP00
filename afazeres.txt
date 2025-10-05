@@ -5,26 +5,42 @@
 
 
 -> SEARCH
-	-> fzr a lógica que solicita o prompt
-	-> lógica que printa a tabela, truncar etc
-	-> solicita o prompt dnv
+	-> lógica que printa a tabela
+		-> printar o header
+		-> printar os componentes
+		->truncar o texto se precisar, substitui o ultimo por '.'
+
+	->solicita dnv o prompt
+		->printa todas as info do index
+
 	-> tratativas de erro
+		-> index negativo
+		->index maior q index_size
 
 
 -> EXIT
 	-> refatorar*
 
-
-
 geral:
 
+-> trocar os std::cout por função de printar
 
 dps:
-	-> norma
+	-> conferir norma
 
+
+index | Name | Last Name | Nickname
+
+
+  ▶ LIST OF CONTACTS 
+ 
+     Index ▏      Name ▏ Last name ▏  Nickname
+     -----------------------------------------
+         0 ▏   aaaaaaa ▏aaaaaaaaaa ▏aaaaaaaaa.
+
+
+Digit a index of contact to see detail
 
 
 links:
-
-
 https://cplusplus.com/doc/tutorial/arrays/

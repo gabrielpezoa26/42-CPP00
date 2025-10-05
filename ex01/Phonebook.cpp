@@ -6,11 +6,16 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:26:09 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/04 17:16:43 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/04 22:58:11 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
+
+void Phonebook::printMessage(std::string message)
+{
+	std::cout << message << std::endl;
+}
 
 void Phonebook::promptFirstName(std::string user_input)
 {
@@ -81,7 +86,7 @@ bool Phonebook::isValidNumber(std::string user_input)
 	{
 		if(!std::isdigit(user_input[i]))
 		{
-			std::cout << "Please insert a valid number :((  " << std::endl;
+			printMessage("Insert only digits.");
 			return false;
 		}
 		i++;
@@ -108,29 +113,58 @@ void Phonebook::addContact()
 {
 	std::string user_input;
 
+	printMessage("SELECTED:: ADD");
 	promptFirstName(user_input);
 	promptLastName(user_input);
 	promptNickName(user_input);
 	promptPhoneNumber(user_input);
 	promptDarkestSecret(user_input);
-	std::cout << "Contact added successfully!" << std::endl;
-	contact_index++;
+	printMessage("Contact added succesfully!");
 
+	contact_index++;
 	if (contact_index == 8)
 	{
 		std::cout << "DEBUG: zerouuu\n";
 		contact_index = 0;
 	}
 }
+/* design:
+
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+     Index|      Name| Last Name|  Nickname|
+--------------------------------------------------
+         0|      maça|     silva|          |
+         1|    banana|     mango|          |
+         2|     melao|          |          |
+         3|          |          |          |
+         4|          |          |          |
+         5|          |          |          |
+         6|          |          |          |
+*/
+
+void Phonebook::printHeader()
+{
+	printMessage("--------------------------------------------------");
+	printMessage("     Index|      Name| Last Name|  Nickname|");
+	printMessage("--------------------------------------------------");
+}
 
 void Phonebook::searchContact()
 {
-	std::cout << "DEBUG: selected 'SEARCH' 2\n";
+	printMessage("SELECTED:: SEARCH");
+	printHeader();
+
+	while(contact_index < COLUMN_WIDTH)
+	{
+		std::cout << "oi";
+		contact_index++;
+	}
 }
 
 void Phonebook::quitPhonebook()
 {
-	std::cout << "Exiting Phonebook ...\n";
+	printMessage("SELECTED:: SEARCH");
 	sleep(1);
 	std::cout << "Burning all contacts ...\n";
 	sleep(1);
