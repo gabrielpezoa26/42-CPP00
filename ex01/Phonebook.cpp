@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:26:09 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/04 22:58:11 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/05 00:58:32 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,10 +128,10 @@ void Phonebook::addContact()
 		contact_index = 0;
 	}
 }
+
 /* design:
 
-
--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+--------------------------------------------------
      Index|      Name| Last Name|  Nickname|
 --------------------------------------------------
          0|      maça|     silva|          |
@@ -150,21 +150,44 @@ void Phonebook::printHeader()
 	printMessage("--------------------------------------------------");
 }
 
+void Phonebook::printRow()
+{
+	int index;
+	std::string name;
+	std::string last;
+	std::string nick;
+	int extraSpace;
+
+	index = contact_index - 1;
+	name = contact_list[contact_index - 1].getFirstName();
+	last = contact_list[contact_index - 1].getLastName();
+	nick = contact_list[contact_index - 1].getNickName();
+	extraSpace = COLUMN_WIDTH - name.length();
+	
+	
+	
+	std::cout << "DEBUG::index" << index << std::endl;
+	std::cout << "DEBUG::name" << name << std::endl;
+	std::cout << "DEBUG:extraSpace" << extraSpace << std::endl;
+
+	
+}
+
 void Phonebook::searchContact()
 {
 	printMessage("SELECTED:: SEARCH");
-	printHeader();
-
-	while(contact_index < COLUMN_WIDTH)
+	if (contact_index != 0)
 	{
-		std::cout << "oi";
-		contact_index++;
+		printHeader();
+		printRow();
 	}
+	else
+		printMessage("List is empty!");
 }
 
 void Phonebook::quitPhonebook()
 {
-	printMessage("SELECTED:: SEARCH");
+	printMessage("SELECTED:: EXIT");
 	sleep(1);
 	std::cout << "Burning all contacts ...\n";
 	sleep(1);

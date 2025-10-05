@@ -6,14 +6,14 @@
 
 -> SEARCH
 	-> lógica que printa a tabela
-		-> printar o header
-		-> printar os componentes
+		-> printar a linha inteira
+			->cada palavra d tras p frente*
 		->truncar o texto se precisar, substitui o ultimo por '.'
 
 	->solicita dnv o prompt
 		->printa todas as info do index
 
-	-> tratativas de erro
+	-> tratativas de erro no prompt
 		-> index negativo
 		->index maior q index_size
 
@@ -24,6 +24,8 @@
 geral:
 
 -> trocar os std::cout por função de printar
+->const
+
 
 dps:
 	-> conferir norma
