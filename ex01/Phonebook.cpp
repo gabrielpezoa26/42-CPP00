@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:26:09 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/05 13:03:24 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/05 14:16:40 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,20 +129,6 @@ void Phonebook::addContact()
 	}
 }
 
-/* design:
-
---------------------------------------------------
-     Index|      Name| Last Name|  Nickname|
---------------------------------------------------
-         0|      maça|     silva|          |
-         1|    banana|     mango|          |
-         2|     melao|          |          |
-         3|          |          |          |
-         4|          |          |          |
-         5|          |          |          |
-         6|          |          |          |
-*/
-
 void Phonebook::printHeader()
 {
 	printMessage("--------------------------------------------------");
@@ -150,13 +136,11 @@ void Phonebook::printHeader()
 	printMessage("--------------------------------------------------");
 }
 
-void Phonebook::printRow()
+void Phonebook::printRow(int index)
 {
-	int index;
 	std::string temp;
 	int extraSpace;
 
-	index = contact_index - 1;
 	extraSpace = 9;
 	while(extraSpace > 0)
 	{
@@ -167,7 +151,13 @@ void Phonebook::printRow()
 	std::cout << "|";
 
 
-	temp = contact_list[contact_index - 1].getFirstName();
+	temp = contact_list[index].getFirstName();
+	// if (temp.length > COLUMN_WIDTH)
+	// {
+	// 	printMessage("DEBUG: vishhh");
+	// 	temp.resize()
+		
+	// }
 	extraSpace = COLUMN_WIDTH - temp.length();
 	while(extraSpace > 0)
 	{
@@ -178,7 +168,7 @@ void Phonebook::printRow()
 	std::cout << "|";
 
 
-	temp = contact_list[contact_index - 1].getLastName();
+	temp = contact_list[index].getLastName();
 	extraSpace = COLUMN_WIDTH - temp.length();
 	while(extraSpace > 0)
 	{
@@ -189,7 +179,7 @@ void Phonebook::printRow()
 	std::cout << "|";
 
 
-	temp = contact_list[contact_index - 1].getNickName();
+	temp = contact_list[index].getNickName();
 	extraSpace = COLUMN_WIDTH - temp.length();
 	while(extraSpace > 0)
 	{
@@ -208,7 +198,7 @@ void Phonebook::searchContact()
 		printHeader();
 		for (int i = 0; i < contact_index; i++)
 		{
-			printRow();
+			printRow(i);
 		}
 	}
 	else
