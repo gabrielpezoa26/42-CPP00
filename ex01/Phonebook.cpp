@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:26:09 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/05 00:58:32 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/05 13:03:24 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,24 +153,51 @@ void Phonebook::printHeader()
 void Phonebook::printRow()
 {
 	int index;
-	std::string name;
-	std::string last;
-	std::string nick;
+	std::string temp;
 	int extraSpace;
 
 	index = contact_index - 1;
-	name = contact_list[contact_index - 1].getFirstName();
-	last = contact_list[contact_index - 1].getLastName();
-	nick = contact_list[contact_index - 1].getNickName();
-	extraSpace = COLUMN_WIDTH - name.length();
-	
-	
-	
-	std::cout << "DEBUG::index" << index << std::endl;
-	std::cout << "DEBUG::name" << name << std::endl;
-	std::cout << "DEBUG:extraSpace" << extraSpace << std::endl;
+	extraSpace = 9;
+	while(extraSpace > 0)
+	{
+		std::cout << " ";
+		extraSpace--;
+	}
+	std::cout << index;
+	std::cout << "|";
 
-	
+
+	temp = contact_list[contact_index - 1].getFirstName();
+	extraSpace = COLUMN_WIDTH - temp.length();
+	while(extraSpace > 0)
+	{
+		std::cout << " ";
+		extraSpace--;
+	}
+	std::cout << temp;
+	std::cout << "|";
+
+
+	temp = contact_list[contact_index - 1].getLastName();
+	extraSpace = COLUMN_WIDTH - temp.length();
+	while(extraSpace > 0)
+	{
+		std::cout << " ";
+		extraSpace--;
+	}
+	std::cout << temp;
+	std::cout << "|";
+
+
+	temp = contact_list[contact_index - 1].getNickName();
+	extraSpace = COLUMN_WIDTH - temp.length();
+	while(extraSpace > 0)
+	{
+		std::cout << " ";
+		extraSpace--;
+	}
+	std::cout << temp;
+	std::cout << "|\n";
 }
 
 void Phonebook::searchContact()
@@ -179,10 +206,13 @@ void Phonebook::searchContact()
 	if (contact_index != 0)
 	{
 		printHeader();
-		printRow();
+		for (int i = 0; i < contact_index; i++)
+		{
+			printRow();
+		}
 	}
 	else
-		printMessage("List is empty!");
+		printMessage("Your list is empty!");
 }
 
 void Phonebook::quitPhonebook()
