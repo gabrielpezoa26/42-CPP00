@@ -1,14 +1,28 @@
-04/10/25
+05/10/25
 
 
--> ADD             ok*
+/* design:
 
+--------------------------------------------------
+     Index|      Name| Last Name|  Nickname|
+--------------------------------------------------
+         0|      maça|     silva|          |
+         1|    banana|     mango|          |
+         2|     melao|          |          |
+         3|          |          |          |
+         4|          |          |          |
+         5|          |          |          |
+         6|          |          |          |
+         7|          |          |          |
+*/
+
+docs:
+	std::string resize();
+	std::string erase();
 
 -> SEARCH
 	-> lógica que printa a tabela
-		-> printar a linha inteira
-			->cada palavra d tras p frente*
-		->truncar o texto se precisar, substitui o ultimo por '.'
+		->cortar o texto se precisar, substitui o ultimo por '.'
 
 	->solicita dnv o prompt
 		->printa todas as info do index
@@ -21,14 +35,19 @@
 -> EXIT
 	-> refatorar*
 
+
+
+
+
 geral:
+	-> trocar os std::cout por função de printar
+	->const
 
--> trocar os std::cout por função de printar
-->const
 
 
-dps:
+finalizar:
 	-> conferir norma
+	-> tirar os print de DEBUG
 
 
 index | Name | Last Name | Nickname
