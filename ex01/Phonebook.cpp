@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:26:09 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/05 14:16:40 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/06 16:57:06 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void Phonebook::promptLastName(std::string user_input)
 {
 	while(true)
 	{	
-		std::cout << "Please enter the last name: ";
+		printMessage("Please enter the last name: ");
 		getline(std::cin, user_input);
 		if (!user_input.empty())
 		{
@@ -136,6 +136,26 @@ void Phonebook::printHeader()
 	printMessage("--------------------------------------------------");
 }
 
+std::string Phonebook::truncateString(std::string temp)
+{
+	if (temp.length() > COLUMN_WIDTH)
+	{
+		temp.resize(9);
+		temp = temp + ".";
+	}
+	return (temp);
+}
+ 
+void Phonebook::printExtraSpace(int extraSpace, std::string temp)
+{
+	extraSpace = COLUMN_WIDTH - temp.length();
+	while(extraSpace > 0)
+	{
+		std::cout << " ";
+		extraSpace--;
+	}
+}
+
 void Phonebook::printRow(int index)
 {
 	std::string temp;
@@ -152,40 +172,22 @@ void Phonebook::printRow(int index)
 
 
 	temp = contact_list[index].getFirstName();
-	// if (temp.length > COLUMN_WIDTH)
-	// {
-	// 	printMessage("DEBUG: vishhh");
-	// 	temp.resize()
-		
-	// }
-	extraSpace = COLUMN_WIDTH - temp.length();
-	while(extraSpace > 0)
-	{
-		std::cout << " ";
-		extraSpace--;
-	}
+	temp = truncateString(temp);
+	printExtraSpace(extraSpace, temp);
 	std::cout << temp;
 	std::cout << "|";
 
 
 	temp = contact_list[index].getLastName();
-	extraSpace = COLUMN_WIDTH - temp.length();
-	while(extraSpace > 0)
-	{
-		std::cout << " ";
-		extraSpace--;
-	}
+	temp = truncateString(temp);
+	printExtraSpace(extraSpace, temp);
 	std::cout << temp;
 	std::cout << "|";
 
 
 	temp = contact_list[index].getNickName();
-	extraSpace = COLUMN_WIDTH - temp.length();
-	while(extraSpace > 0)
-	{
-		std::cout << " ";
-		extraSpace--;
-	}
+	temp = truncateString(temp);
+	printExtraSpace(extraSpace, temp);
 	std::cout << temp;
 	std::cout << "|\n";
 }
@@ -200,6 +202,7 @@ void Phonebook::searchContact()
 		{
 			printRow(i);
 		}
+		std::cout << "DEBUG: aaaaaaaaaaaaaa\n";
 	}
 	else
 		printMessage("Your list is empty!");

@@ -16,25 +16,16 @@
          7|          |          |          |
 */
 
-docs:
-	std::string resize();
-	std::string erase();
+
+
 
 -> SEARCH
-	-> lógica que printa a tabela
-		->cortar o texto se precisar, substitui o ultimo por '.'
-
 	->solicita dnv o prompt
 		->printa todas as info do index
 
 	-> tratativas de erro no prompt
 		-> index negativo
-		->index maior q index_size
-
-
--> EXIT
-	-> refatorar*
-
+		-> index maior q index_size
 
 
 

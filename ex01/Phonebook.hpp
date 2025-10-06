@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 20:00:11 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/05 14:25:15 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/06 16:49:32 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ class Phonebook
 	int		contact_index;
 	void printMessage(std::string message);
 	void printHeader();
+	std::string truncateString(std::string temp);
+	void printExtraSpace(int extraSpace, std::string temp);
 	void printRow(int index);
 	void promptFirstName(std::string user_input);
 	void promptLastName(std::string user_input);
