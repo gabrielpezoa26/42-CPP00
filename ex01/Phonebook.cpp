@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:26:09 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/06 20:11:11 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/06 20:20:02 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,13 +192,14 @@ void Phonebook::printRow(int index)
 	std::cout << "|\n";
 }
 
+#include <stdio.h>
 void Phonebook::printFullInfo(int index)
 {
-
 	std::string input;
 
 	std::cout << "Select a index:";
 	std::getline(std::cin, input);
+	printf("DEBUG: index = %d", index);
 	if (index < 0 || index > contact_index)
 		printMessage("vishhh");
 }
@@ -206,7 +207,7 @@ void Phonebook::printFullInfo(int index)
 void Phonebook::searchContact()
 {
 	std::string input;
-	int i = 0;
+	int i;
 
 	printMessage("SELECTED:: SEARCH");
 	if (contact_index != 0)
@@ -216,6 +217,7 @@ void Phonebook::searchContact()
 		{
 			printRow(i);
 		}
+		printf("DEBUG: i = %d\n", i);
 		std::cout << "DEBUG:contact_index = " << contact_index << std::endl;
 		printFullInfo(i);
 	}
