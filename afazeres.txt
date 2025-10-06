@@ -33,7 +33,8 @@
 geral:
 	-> trocar os std::cout por função de printar
 	->const
-
+	-> ç usar isascii
+	-> eof
 
 
 finalizar:

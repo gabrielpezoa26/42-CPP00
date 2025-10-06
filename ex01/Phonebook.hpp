@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 20:00:11 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/06 16:49:32 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/06 20:04:24 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <cctype>
 #include <stdlib.h>
 #include <cstdlib>
+#include <ctype.h>
 
 #define COLUMN_WIDTH 10
 
@@ -33,6 +34,7 @@ class Phonebook
 	std::string truncateString(std::string temp);
 	void printExtraSpace(int extraSpace, std::string temp);
 	void printRow(int index);
+	void printFullInfo(int index);
 	void promptFirstName(std::string user_input);
 	void promptLastName(std::string user_input);
 	void promptNickName(std::string user_input);
