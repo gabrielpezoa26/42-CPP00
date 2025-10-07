@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 20:00:11 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/07 14:52:22 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/07 15:30:21 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 # define PHONEBOOK_HPP
 
 #include "Contact.hpp"
-#include <iostream>        //std cout
-#include <string>         //std::string
-#include <sstream>       //conversao
-#include <unistd.h>     //sleep
-#include <cstdlib>     //exit
-#include <cstdio>     //stdin
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <unistd.h>
+#include <cstdlib>
+#include <cstdio>
 
 #define COLUMN_WIDTH 10
 
 class Phonebook
 {
 	private:
-	Contact contact_list[8];
+	Contact		contact_list[8];
 	int		contact_index;
 	int		contact_count;
 
@@ -44,6 +44,7 @@ class Phonebook
 	void printFullInfo(int index);
 	
 	bool isValidNumber(std::string user_input);
+
 
 
 	public:
