@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 09:51:16 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/07 14:51:37 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/07 15:51:31 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static bool	check_args(int argc)
 
 int	main(int argc, char **argv)
 {
-	Phonebook phonebook;
+	Phonebook Phonebook;
 	std::string command;
 
 	(void)argv;
@@ -35,18 +35,18 @@ int	main(int argc, char **argv)
 	{
 		if (feof(stdin))
 		{
-			std::cout << "DEBUG: Ctrl + D\n";
+			std::cout << "Pressed Ctrl + D, exiting program\n";
 			break ;
 		}
 		std::cout << "Please enter a command( ADD || SEARCH || EXIT )>> ";
 		std::getline(std::cin, command);
 
 		if (command == "ADD")
-			phonebook.addContact();
+			Phonebook.addContact();
 		else if (command == "SEARCH")
-			phonebook.searchContact();
+			Phonebook.searchContact();
 		else if (command == "EXIT")
-			phonebook.quitPhonebook();
+			Phonebook.quitPhonebook();
 		else
 		{
 			std::cout << "Please insert a valid command ;)" << std::endl; 

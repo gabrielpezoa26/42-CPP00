@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:26:09 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/07 15:27:44 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/07 15:46:28 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,6 @@
 void Phonebook::printMessage(std::string message)
 {
 	std::cout << message << std::endl;
-}
-
-bool Phonebook::isValidAscii(std::string input)
-{
-	unsigned long int valid = 0;
-
-	while(input[i])
-	{
-		if (input[i] >= 0 && input[i] <= 127)
-		{
-			valid++;
-			input++;
-		}
-		input++;
-	}
-	if (valid == input.length())
-		return true;
-	return false;
 }
 
 void Phonebook::promptFirstName(std::string user_input)
@@ -53,7 +35,7 @@ void Phonebook::promptLastName(std::string user_input)
 {
 	while(true)
 	{	
-		printMessage("Please enter the last name: ");
+		std::cout << "Please enter the last name: ";
 		getline(std::cin, user_input);
 		if (!user_input.empty())
 		{
