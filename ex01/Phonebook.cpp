@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:26:09 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/07 10:38:31 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/07 11:06:45 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,7 @@ void Phonebook::addContact()
 	if (contact_index == 8)
 	{
 		std::cout << "DEBUG: zerouuu\n";
-		contact_index = 0;
+		contact_index = 0; //ta errado
 	}
 }
 
@@ -167,7 +167,7 @@ void Phonebook::printRow(int index)
 		std::cout << " ";
 		extraSpace--;
 	}
-	std::cout << index + 1;
+	std::cout << index;
 	std::cout << "|";
 
 
@@ -193,46 +193,45 @@ void Phonebook::printRow(int index)
 }
 
 #include <stdio.h>
-void Phonebook::printFullInfo(int index)
+
+void Phonebook::printFullInfo()
 {
 	std::string input_search;
-	
-	std::cout << "Select a index: (or 'exit plsss' for going to menu)";
+	int	index;
+
+	std::cout << "Select an index to see the full details (or 'MENU' for going to menu): ";
 	std::getline(std::cin, input_search);
-	if (input_search == "exit plsss")
+	if (input_search == "MENU")
 	{
-		printMessage("DEBUG: ESCCCC");
+		printMessage("DEBUG: MENU");
 		return ;
 	}
 	std::stringstream ss(input_search);
 	ss >> index;
-	if (ss.fail() || index < 0 || index > contact_index)
+	if (ss.fail() || index < 0 || index >= contact_index)
 	{
-		printMessage("DEBUG: Invalid index. Please insert a valid one");
-		return ;
+		printMessage("Invalid index.");
+		return;
 	}
 	else
 	{
-		printMessage("DEBUG: validddd");
+		printMessage("DEBUG: deu bom");
 	}
 }
 
 void Phonebook::searchContact()
 {
-	std::string input;
 	int i;
 
 	printMessage("SELECTED:: SEARCH");
-	if (contact_index != 0)
+	if (contact_index > 0)
 	{
 		printHeader();
 		for (i = 0; i < contact_index; i++)
 		{
 			printRow(i);
 		}
-		printf("DEBUG: i = %d\n", i);
-		std::cout << "DEBUG:contact_index = " << contact_index << std::endl;
-		printFullInfo(i);
+		printFullInfo();
 	}
 	else
 		printMessage("Your list is empty!");
