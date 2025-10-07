@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 15:02:22 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/09/01 13:27:58 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/07 16:08:49 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ int main(int ac, char **av)
 			input++;
 		}
 	}
+	std::cout << std::endl;
 	return (0);
 }
