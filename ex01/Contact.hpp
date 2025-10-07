@@ -6,13 +6,12 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 09:50:04 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/03 18:08:01 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/07 14:51:55 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
-#include <iostream>
 #include <string>
 
 class Contact

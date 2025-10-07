@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:26:09 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/07 13:21:41 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/07 14:42:35 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void Phonebook::promptFirstName(std::string user_input)
 		}
 	}
 	contact_list[contact_index].setFirstName(user_input);
-	std::cout << "DEBUG: first name = " << user_input << std::endl;
 }
 
 void Phonebook::promptLastName(std::string user_input)
@@ -44,7 +43,6 @@ void Phonebook::promptLastName(std::string user_input)
 		}
 	}
 	contact_list[contact_index].setLastName(user_input);
-	std::cout << "DEBUG: last name = " << user_input << std::endl;
 }
 
 void Phonebook::promptNickName(std::string user_input)
@@ -59,7 +57,6 @@ void Phonebook::promptNickName(std::string user_input)
 		}
 	}
 	contact_list[contact_index].setNickName(user_input);
-	std::cout << "DEBUG: nickname = " << user_input << std::endl;
 }
 
 void Phonebook::promptPhoneNumber(std::string user_input)
@@ -75,7 +72,6 @@ void Phonebook::promptPhoneNumber(std::string user_input)
 		}
 	}
 		contact_list[contact_index].setPhoneNumber(user_input);
-		std::cout << "DEBUG: phonenumber = " << user_input << std::endl;
 }
 
 bool Phonebook::isValidNumber(std::string user_input)
@@ -106,7 +102,6 @@ void Phonebook::promptDarkestSecret(std::string user_input)
  		}
 	}
 	contact_list[contact_index].setDarkestSecret(user_input);
-	std::cout << "DEBUG: secret = " << user_input << std::endl;
 }
 
 
@@ -193,29 +188,44 @@ void Phonebook::printRow(int index)
 	std::cout << "|\n";
 }
 
-#include <stdio.h>
+void Phonebook::printFullInfo(int index)
+{
+	std::string temp;
 
-void Phonebook::printFullInfo()
+	temp = contact_list[index].getFirstName();
+	std::cout << "First name: " << temp << std::endl;
+
+	temp = contact_list[index].getLastName();
+	std::cout << "Last name: " << temp << std::endl;
+
+	temp = contact_list[index].getNickName();
+	std::cout << "Nick name: " << temp << std::endl;
+
+	temp = contact_list[index].getPhoneNumber();
+	std::cout << "Phone number: " << temp << std::endl;
+
+	temp = contact_list[index].getDarkestSecret();
+	std::cout << "Darkest Secret: " << temp << std::endl;
+}
+
+void Phonebook::promptIndex()
 {
 	std::string input_search;
 	int	index;
 
 	std::cout << "Select an index to see the full details (or anything else to going to Menu): ";
 	std::getline(std::cin, input_search);
-	if (input_search == "MENU")
-	{
-		return ;
-	}
+	
 	std::stringstream ss(input_search);
 	ss >> index;
 	if (ss.fail() || index < 0 || index >= contact_count)
 	{
-		printMessage("Invalid index.");
+		printMessage("Invalid index! Going to menu.");
 		return;
 	}
 	else
 	{
-		printMessage("DEBUG: deu bom");
+		printFullInfo(index);
 	}
 }
 
@@ -233,7 +243,7 @@ void Phonebook::searchContact()
 	{
 		printRow(i);
 	}
-	printFullInfo();
+	promptIndex();
 }
 
 void Phonebook::quitPhonebook()

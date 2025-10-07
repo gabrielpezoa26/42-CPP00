@@ -6,18 +6,17 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 09:51:16 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/06 17:41:47 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/07 14:51:37 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
-#include "Contact.hpp"
 
-static bool	check_args(int argc, char **argv)
+static bool	check_args(int argc)
 {
-	if (argc != 1 || argv[1])
+	if (argc != 1)
 	{
-		std::cout << "Incorrect argument count :(( " << std::endl;
+		std::cout << "Incorrect argument count :/ " << std::endl;
 		return (false);
 	}
 	return (true);
@@ -28,11 +27,17 @@ int	main(int argc, char **argv)
 	Phonebook phonebook;
 	std::string command;
 
-	if (!check_args(argc, argv))
+	(void)argv;
+	if (!check_args(argc))
 		return 1;
 	std::cout << "Welcome to the Phonebook program!" << std::endl;
 	while (1)
 	{
+		if (feof(stdin))
+		{
+			std::cout << "DEBUG: Ctrl + D\n";
+			break ;
+		}
 		std::cout << "Please enter a command( ADD || SEARCH || EXIT )>> ";
 		std::getline(std::cin, command);
 
@@ -44,7 +49,7 @@ int	main(int argc, char **argv)
 			phonebook.quitPhonebook();
 		else
 		{
-			std::cout << "Please try a valid command ;)" << std::endl; 
+			std::cout << "Please insert a valid command ;)" << std::endl; 
 		}
 	}
 	return (0);
