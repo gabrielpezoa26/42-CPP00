@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:26:09 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/06 20:20:02 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/07 10:38:31 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,7 +167,7 @@ void Phonebook::printRow(int index)
 		std::cout << " ";
 		extraSpace--;
 	}
-	std::cout << index;
+	std::cout << index + 1;
 	std::cout << "|";
 
 
@@ -195,13 +195,26 @@ void Phonebook::printRow(int index)
 #include <stdio.h>
 void Phonebook::printFullInfo(int index)
 {
-	std::string input;
-
-	std::cout << "Select a index:";
-	std::getline(std::cin, input);
-	printf("DEBUG: index = %d", index);
-	if (index < 0 || index > contact_index)
-		printMessage("vishhh");
+	std::string input_search;
+	
+	std::cout << "Select a index: (or 'exit plsss' for going to menu)";
+	std::getline(std::cin, input_search);
+	if (input_search == "exit plsss")
+	{
+		printMessage("DEBUG: ESCCCC");
+		return ;
+	}
+	std::stringstream ss(input_search);
+	ss >> index;
+	if (ss.fail() || index < 0 || index > contact_index)
+	{
+		printMessage("DEBUG: Invalid index. Please insert a valid one");
+		return ;
+	}
+	else
+	{
+		printMessage("DEBUG: validddd");
+	}
 }
 
 void Phonebook::searchContact()

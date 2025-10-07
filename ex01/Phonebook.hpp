@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 20:00:11 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/06 20:04:24 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/07 10:30:46 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "Contact.hpp"
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <unistd.h>
 #include <cctype>
 #include <stdlib.h>
