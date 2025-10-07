@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 20:00:11 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/07 15:51:39 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/07 15:56:35 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,7 @@ class Phonebook
 
 
 	public:
-		Phonebook()
-		{
-			contact_index = 0;
-			contact_count = 0;
-		}
+	Phonebook();
 	void addContact();
 	void searchContact();
 	void quitPhonebook();

@@ -6,11 +6,17 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:26:09 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/07 15:46:28 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/07 15:56:41 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
+
+Phonebook::Phonebook()
+{
+	contact_index = 0;
+	contact_count = 0;
+}
 
 void Phonebook::printMessage(std::string message)
 {
