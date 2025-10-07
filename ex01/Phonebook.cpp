@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:26:09 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/07 11:06:45 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/07 13:21:41 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ void Phonebook::promptDarkestSecret(std::string user_input)
 	std::cout << "DEBUG: secret = " << user_input << std::endl;
 }
 
+
 void Phonebook::addContact()
 {
 	std::string user_input;
@@ -121,11 +122,11 @@ void Phonebook::addContact()
 	promptDarkestSecret(user_input);
 	printMessage("Contact added succesfully!");
 
-	contact_index++;
-	if (contact_index == 8)
+	contact_index = (contact_index + 1) % 8;
+
+	if (contact_count < 8)
 	{
-		std::cout << "DEBUG: zerouuu\n";
-		contact_index = 0; //ta errado
+		contact_count++;
 	}
 }
 
@@ -199,16 +200,15 @@ void Phonebook::printFullInfo()
 	std::string input_search;
 	int	index;
 
-	std::cout << "Select an index to see the full details (or 'MENU' for going to menu): ";
+	std::cout << "Select an index to see the full details (or anything else to going to Menu): ";
 	std::getline(std::cin, input_search);
 	if (input_search == "MENU")
 	{
-		printMessage("DEBUG: MENU");
 		return ;
 	}
 	std::stringstream ss(input_search);
 	ss >> index;
-	if (ss.fail() || index < 0 || index >= contact_index)
+	if (ss.fail() || index < 0 || index >= contact_count)
 	{
 		printMessage("Invalid index.");
 		return;
@@ -224,17 +224,16 @@ void Phonebook::searchContact()
 	int i;
 
 	printMessage("SELECTED:: SEARCH");
-	if (contact_index > 0)
+	if (contact_count == 0)
 	{
-		printHeader();
-		for (i = 0; i < contact_index; i++)
-		{
-			printRow(i);
-		}
-		printFullInfo();
-	}
-	else
 		printMessage("Your list is empty!");
+	}
+	printHeader();
+	for (i = 0; i < contact_count; i++)
+	{
+		printRow(i);
+	}
+	printFullInfo();
 }
 
 void Phonebook::quitPhonebook()

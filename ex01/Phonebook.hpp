@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 20:00:11 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/10/07 11:09:36 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/10/07 13:18:43 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Phonebook
 	private:
 	Contact contact_list[8];
 	int		contact_index;
+	int		contact_count;
 
 	void printMessage(std::string message);
 	void printHeader();
@@ -49,6 +50,7 @@ class Phonebook
 		Phonebook()
 		{
 			contact_index = 0;
+			contact_count = 0;
 		}
 	void addContact();
 	void searchContact();

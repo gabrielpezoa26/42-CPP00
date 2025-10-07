@@ -17,24 +17,29 @@
 */
 
 
-
+--------------------------------------------------
+     Index|      Name| Last Name|  Nickname|
+--------------------------------------------------
+         0|    batata|     frita|    potato|
+         1|    feijao|    cozido|     beans|
+         2|     mouse|     preto|       fio|
+         3|   celular|   samsung|     preto|
+         4|      fone|    branco|   foneeee|
+         5|cincooooo.|     cinco|     cinco|
+         6|      seis|      seis|      seis|
 
 -> SEARCH
-	->solicita dnv o prompt
-		->printa todas as info do index
+	->printa todas as info do index
+	-> ç
+	->feof
+
+
 
 	-> tratativas de erro no prompt
-		-> index negativo
-		-> index maior q index_size
+		-> index negativo            ok
+		-> index maior q index_size         ok
 
 
-
-
-geral:
-	-> trocar os std::cout por função de printar
-	->const
-	-> ç usar isascii
-	-> eof
 
 
 finalizar:
