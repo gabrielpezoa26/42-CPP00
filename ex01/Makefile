@@ -1,7 +1,7 @@
 NAME = phonebook
 OBJECTS = objects/Phonebook.o objects/Contact.o objects/main.o
 
-CC = g++
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 OBJ_DIR = objects
 
